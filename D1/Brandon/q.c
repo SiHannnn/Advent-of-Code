@@ -62,5 +62,6 @@ int main(int argc, char *argv[])
     }
     sumCalories = top3 + top2 + top1;
     printf("Top 3 calories: %d, %d, %d\nTotal sum of calories: %d", top1, top2, top3, sumCalories);
+    fclose(ifs);
     return 0;
 }
