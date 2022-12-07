@@ -1,0 +1,2 @@
+Pairs fully containing the other: 556
+Pairs overlapping: 876
