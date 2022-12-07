@@ -1,0 +1,2 @@
+Top 3 calories: 70613, 68330, 66862
+Total sum of calories: 205805
