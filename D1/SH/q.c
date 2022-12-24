@@ -18,7 +18,9 @@ int main(void){
     int elf_index = 0;
     int elf_cal_arr_index = 0;
 
-    int max_cal = 0;
+    int cal_1st = 0;
+    int cal_2nd = 0;
+    int cal_3rd = 0;
 
     while(scanf("%c", &input_arr[arr_index]) != EOF){
         if(input_arr[arr_index] == '\n'){
@@ -36,8 +38,15 @@ int main(void){
                     total_cal_current += elf_arr[elf_index].cal_arr[i];
                 }
 
-                if(max_cal < total_cal_current){
-                    max_cal = total_cal_current;
+                if(total_cal_current > cal_1st){
+                    cal_3rd = cal_2nd;
+                    cal_2nd = cal_1st;
+                    cal_1st = total_cal_current;
+                }else if(total_cal_current > cal_2nd){
+                    cal_3rd = cal_2nd;
+                    cal_2nd = total_cal_current;
+                }else if(total_cal_current > cal_3rd){
+                    cal_3rd = total_cal_current;
                 }
 
                 arr_index = 0;
@@ -50,7 +59,10 @@ int main(void){
         }
     }
 
-    printf("%d\n", max_cal);
+    printf("%d\n", cal_1st);
+    printf("%d\n", cal_2nd);
+    printf("%d\n", cal_3rd);
+    printf("%d\n", cal_1st + cal_2nd + cal_3rd);
 
     return 0;
 }
